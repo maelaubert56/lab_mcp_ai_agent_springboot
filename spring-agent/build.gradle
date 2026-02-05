@@ -19,9 +19,22 @@ repositories {
 }
 
 dependencies {
+	// Spring
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework:spring-webflux'
+
+	// LangChain4j BOM (pins everything to 1.10.0)
+	implementation platform('dev.langchain4j:langchain4j-bom:1.10.0')
+
+	// LangChain4j core + Google AI (Gemini)
+	implementation 'dev.langchain4j:langchain4j'
+	implementation 'dev.langchain4j:langchain4j-google-ai-gemini'
+
+	// Optional: JDK HTTP client integration
+	implementation 'dev.langchain4j:langchain4j-http-client-jdk'
+
+	// Testing
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
