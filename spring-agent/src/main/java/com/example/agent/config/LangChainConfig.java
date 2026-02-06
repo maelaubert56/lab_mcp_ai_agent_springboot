@@ -26,6 +26,8 @@ public class LangChainConfig {
                 .apiKey(apiKey)
                 .modelName(model)
                 .timeout(Duration.ofSeconds(timeoutSeconds))
+                .sendThinking(true)
+                .returnThinking(true)
                 .build();
     }
 
