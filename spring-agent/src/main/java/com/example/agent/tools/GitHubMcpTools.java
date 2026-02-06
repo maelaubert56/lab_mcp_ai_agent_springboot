@@ -32,7 +32,8 @@ public class GitHubMcpTools implements AgentTool {
             @P("Issue title") String title,
             @P("Issue body in Markdown") String body
     ) {
-        Map result = (Map) mcp.callTool("create_issue", Map.of(
+        Map result = (Map) mcp.callTool("issue_write", Map.of(
+                "method", "create",
                 "owner", owner,
                 "repo", repo,
                 "title", title,
