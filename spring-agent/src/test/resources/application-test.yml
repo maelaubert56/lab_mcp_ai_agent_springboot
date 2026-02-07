@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: agent-test
+
+server:
+  port: 0
+
+github:
+  owner: test-owner
+  repo: test-repo
+
+google-ai:
+  api-key: test-key-not-used
+  model: gemini-3-flash-preview
+  timeout-seconds: 5
+
+mcp:
+  base-url: http://localhost:3333
+  path: /mcp
