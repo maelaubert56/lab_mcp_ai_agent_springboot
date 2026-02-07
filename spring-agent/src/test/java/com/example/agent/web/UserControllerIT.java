@@ -1,18 +1,29 @@
 package com.example.agent.web;
 
 import com.example.agent.domain.User;
+import com.example.agent.mcp.McpHttpClient;
+import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("test")
 class UserControllerIT {
 
     @Autowired
     WebTestClient web;
+
+    @MockBean
+    McpHttpClient mcp;
+
+    @MockBean
+    GoogleAiGeminiChatModel geminiModel;
 
     @Test
     void should_create_and_get_user() {
