@@ -11,9 +11,9 @@ github:
 
 google-ai:
   api-key: ${GOOGLE_AI_API_KEY}
-  model: gemini-3-flash-preview
+  model: gemini-flash-lite-latest
   timeout-seconds: 60
 
 mcp:
-  base-url: http://localhost:3333
-  path: /mcp
+  base-url: ${MCP_BASE_URL:http://localhost:3333}
+  path: ${MCP_PATH:/mcp}

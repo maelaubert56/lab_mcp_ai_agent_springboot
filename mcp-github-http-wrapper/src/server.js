@@ -68,6 +68,6 @@ app.post(PATH, async (req, res) => {
 
 app.get("/healthz", (_req, res) => res.status(200).send("ok"));
 
-app.listen(PORT, () => {
-    console.log(`GitHub MCP HTTP Wrapper listening on http://localhost:${PORT}${PATH}`);
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`GitHub MCP HTTP Wrapper listening on http://0.0.0.0:${PORT}${PATH}`);
 });
