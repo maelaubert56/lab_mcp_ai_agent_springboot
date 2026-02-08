@@ -5,13 +5,12 @@ spring:
 server:
   port: 8081
 
-github:
-  owner: ${GITHUB_OWNER}
-  repo: ${GITHUB_REPO}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
 
-google-ai:
-  api-key: ${GOOGLE_AI_API_KEY}
-  model: gemini-flash-lite-latest
   timeout-seconds: 60
 
 mcp:
